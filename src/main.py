@@ -9,24 +9,14 @@ seed organisms and observe emergent ecosystems.
 from __future__ import annotations
 
 import math
-import os
 import random
 import sys
 from collections import defaultdict
 from dataclasses import dataclass
 from enum import Enum, auto
-from pathlib import Path
 from typing import Dict, List, Optional, Sequence, Tuple
 
 import pygame
-
-# Ensure relative resources resolve when packaged as an executable.
-if getattr(sys, "frozen", False):
-    BASE_PATH = Path(sys.executable).resolve().parent
-else:
-    BASE_PATH = Path(__file__).resolve().parent.parent
-
-os.chdir(BASE_PATH)
 
 # ---------------------------------------------------------------------------
 # Configuration constants

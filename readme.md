@@ -38,32 +38,16 @@ Aurora Evolutions is an interactive 2D evolution sandbox inspired by Conway's Ga
    python -m src.main
    ```
 
-## Downloading a ready-to-run Windows build
+## Building a standalone executable (Windows)
 
-If you publish releases on GitHub, run the packaging script below and upload the generated zip archive to a release. People can then download the zip, extract it anywhere and double-click `AuroraEvolutions.exe` to start the simulator—no Python installation required.
-
-```powershell
-packaging\windows\build_exe.ps1
-```
-
-Or, from Command Prompt:
-
-```bat
-packaging\windows\build_exe.bat
-```
-
-The script creates `dist/AuroraEvolutions-win64.zip`, which contains the executable plus a README. Share that archive in your GitHub releases so anyone can download and run the simulator with a single double-click.
-
-## Building a standalone executable manually (Windows)
-
-You can also run [PyInstaller](https://pyinstaller.org/) yourself if you prefer:
+You can bundle the project into a single executable using [PyInstaller](https://pyinstaller.org/):
 
 ```bash
 pip install pyinstaller
-pyinstaller --noconfirm --onefile --windowed --name "AuroraEvolutions" src/main.py
+pyinstaller --noconfirm --onefile --name "Aurora Evolutions" --add-data "assets:assets" src/main.py
 ```
 
-This command creates `dist/AuroraEvolutions.exe`. Copy any additional assets you add alongside the executable. On other platforms you can use the same PyInstaller command or the platform-specific packagers you prefer.
+This command creates `dist/Aurora Evolutions.exe`. Copy the `assets` folder (if you add custom art or data) alongside the executable. On other platforms you can use the same PyInstaller command or the platform-specific packagers you prefer.
 
 ## Project structure
 
